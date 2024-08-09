@@ -1,0 +1,12 @@
+apiVersion: monitoring.coreos.com/v1
+kind: Prometheus
+metadata:
+  name: prometheus
+spec:
+  serviceAccountName: prometheus-k8s
+  serviceMonitorNamespaceSelector:
+    matchNames:
+      - monitoring
+  serviceMonitorSelector:
+    matchLabels:
+      app: socks-shop

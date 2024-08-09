@@ -1,0 +1,5 @@
+flux bootstrap github \
+  --owner=<Balogun Aneefat> \
+  --repository=<Aneefat's capstone project.io> \
+  --branch=main \
+  --path=./clusters/my-cluster

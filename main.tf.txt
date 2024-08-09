@@ -1,0 +1,40 @@
+provider "aws" {
+ region = "us-west-2"
+}
+
+resource "aws_vpc" {
+  cidr_block = "10.0.1.0/24"
+  tags = {
+    Name = "aws-subnet"
+  }
+}
+
+resource "aws_security_group" {
+  vpc_id = aws_vpc.id
+  tags = {
+   Name = "aws-subnet"
+  }
+}
+
+resource "aws_security_group" {
+  vpc_id = aws_vpc.id
+
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+}
+
+egress {
+ from_port     = 0
+ to_port       = 0
+ protocol      = "-1"
+ cidr_blocks   = ["0.0.0.0/0"]
+  }
+
+  tags = {
+   Name = "aws-security-group"
+    }
+}
+
