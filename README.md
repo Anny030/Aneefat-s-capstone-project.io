@@ -1,0 +1,1 @@
+I was able to setup an infrastructure for deployment of microservices using applications like Terraform, Kubernetes, Helm, Prometheus, Grafana, Fluentd,cert manager and flux. The configuration was applied correctly, ensuring an automated deployment pipeline.
